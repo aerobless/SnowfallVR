@@ -16,6 +16,8 @@ permissions and limitations under the License.
 
 #if UNITY_EDITOR
 using UnityEditor;
+using System;
+using UnityEngine;
 
 [InitializeOnLoadAttribute]
 public class OculusSampleFrameworkUtil
@@ -40,7 +42,7 @@ public class OculusSampleFrameworkUtil
   {
     if (state == PlayModeStateChange.EnteredPlayMode)
     {
-      OVRPlugin.SendEvent("load", OVRPlugin.wrapperVersion.ToString(), "sample_framework");
+      //OVRPlugin.SendEvent("load", "1.51.0", "sample_framework");
     }
   }
 #endif

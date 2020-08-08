@@ -324,6 +324,8 @@ public class OVRPlayerController : MonoBehaviour
 			bool moveRight = Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow);
 			bool moveBack = Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow);
 
+			Debug.Log("Hello World!");
+
 			bool dpad_move = false;
 
 			if (OVRInput.Get(OVRInput.Button.DpadUp))
