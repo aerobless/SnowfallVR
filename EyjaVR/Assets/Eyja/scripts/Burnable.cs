@@ -29,6 +29,7 @@ public class Burnable : MonoBehaviour
             print("Object has been triggered to start burning");
             isBurning = true;
             GetComponent<ParticleSystem>().Play();
+            GetComponent<AudioSource>().Play();
             Destroy(gameObject, 10);
         }
     }
