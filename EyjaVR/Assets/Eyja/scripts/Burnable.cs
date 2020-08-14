@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Burnable : MonoBehaviour
 {
     public Boolean isBurning;
+    public Boolean burnsForever;
 
     // Start is called before the first frame update
     void Start()
@@ -24,11 +24,12 @@ public class Burnable : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Burnable burnableGameObject = other.gameObject.GetComponent<Burnable>();
-        if (burnableGameObject != null && burnableGameObject.isBurning)
+        if (burnableGameObject != null && burnableGameObject.isBurning && burnsForever == false)
         {
             print("Object has been triggered to start burning");
             isBurning = true;
             GetComponent<ParticleSystem>().Play();
+            Destroy(gameObject, 10);
         }
     }
 }
