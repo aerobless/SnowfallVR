@@ -1,2 +1,3 @@
-# EyjaVR
-experimental virtual reality game
+# SnowfallVR
+
+A game about throwing snowballs
