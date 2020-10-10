@@ -60,3 +60,6 @@ crashlytics-build.properties
 
 # Mac
 .DS_Store
+
+# Third Party Assets
+/Assets/ThirdPartyAssets
