@@ -15,4 +15,15 @@ public class Snowball : MonoBehaviour
     {
         
     }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        Snowman snowman = other.gameObject.GetComponent<Snowman>();
+        if (snowman != null)
+        {
+            //TODO: destroy snowball only on impact with enough force
+            // Destroy snowball on impact with snowman
+            Destroy(gameObject, 0);
+        }
+    }
 }
