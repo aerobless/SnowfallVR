@@ -9,3 +9,5 @@ One or more textures on this 3D model have been created with photographs from Te
 ## Sounds
 
 + CC0: fire_crackling_370938__jmehlferber__fire-crackling: https://freesound.org/people/jmehlferber/sounds/370938/
+
++ File: snowball-shot.wav Source: https://freesound.org/people/qubodup/sounds/60013/ License: CC0
