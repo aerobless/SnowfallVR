@@ -11,7 +11,7 @@ public class SnowMonsterBehaviour : MonoBehaviour, GunTarget
 
     private Animator _animator;
     private int dieHash = Animator.StringToHash("Die");
-    private int takeDamageHash = Animator.StringToHash("TakeDamage");
+    private int takeDamageHash = Animator.StringToHash("Take Damage");
     
     //AI
     private Transform _playerTransform;
