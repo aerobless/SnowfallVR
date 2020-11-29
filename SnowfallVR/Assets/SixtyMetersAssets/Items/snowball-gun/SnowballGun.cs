@@ -7,11 +7,14 @@ public class SnowballGun : MonoBehaviour
 {
     public float damage = 10f;
     public float range = 100f;
+    public int damagePerHit = 10;
 
     public OVRGrabbable gun;
     public AudioSource audioSource;
     public AudioClip shotSound;
-    
+    public ParticleSystem muzzleFlash;
+    public GameObject impactEffect;
+
     // Update is called once per frame
     void Update()
     {
@@ -24,11 +27,23 @@ public class SnowballGun : MonoBehaviour
     private void Shoot()
     {
         audioSource.PlayOneShot(shotSound, 1f);
+        muzzleFlash.Play();
+
+        //TODO: remove debug statement later on
+        Debug.DrawRay(gun.transform.position, gun.transform.forward, Color.red, 5);
+
         RaycastHit hit;
-        Debug.DrawRay(gun.transform.position, gun.transform.forward,  Color.red, 5);
         if (Physics.Raycast(gun.transform.position, gun.transform.forward, out hit, range))
         {
-            Debug.Log(hit.transform.name);
+            Debug.Log(hit.transform.name); //TODO: remove, logs the name of the hit object
+            SnowballGunTarget target = hit.transform.GetComponent<SnowballGunTarget>();
+            if (target != null)
+            {
+                target.TakeDamage(damagePerHit);
+            }
+            
+            GameObject instantiatedImpact = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+            Destroy(instantiatedImpact, 2f);
         }
     }
 }

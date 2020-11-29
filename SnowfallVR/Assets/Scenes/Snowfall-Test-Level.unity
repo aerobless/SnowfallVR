@@ -506,9 +506,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   range: 100
+  damagePerHit: 10
   gun: {fileID: 57314227}
   audioSource: {fileID: 743665683}
   shotSound: {fileID: 8300000, guid: d0d5f784e26e340b98236eae43bbc365, type: 3}
+  muzzleFlash: {fileID: 600390791}
+  impactEffect: {fileID: 3161593046398580371, guid: 182dabfe295e6473eb25158128687c3f,
+    type: 3}
 --- !u!114 &57314227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1642,6 +1646,81 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 565447549}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &600390790
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 57314228}
+    m_Modifications:
+    - target: {fileID: 4156473873265679478, guid: 810609c2f2279435d9057c4db8a8bf76,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4156473873265679478, guid: 810609c2f2279435d9057c4db8a8bf76,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4156473873265679478, guid: 810609c2f2279435d9057c4db8a8bf76,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4156473873265679478, guid: 810609c2f2279435d9057c4db8a8bf76,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4156473873265679478, guid: 810609c2f2279435d9057c4db8a8bf76,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4156473873265679478, guid: 810609c2f2279435d9057c4db8a8bf76,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4156473873265679478, guid: 810609c2f2279435d9057c4db8a8bf76,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4156473873265679478, guid: 810609c2f2279435d9057c4db8a8bf76,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4156473873265679478, guid: 810609c2f2279435d9057c4db8a8bf76,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4156473873265679478, guid: 810609c2f2279435d9057c4db8a8bf76,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4156473873265679478, guid: 810609c2f2279435d9057c4db8a8bf76,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610353112655110877, guid: 810609c2f2279435d9057c4db8a8bf76,
+        type: 3}
+      propertyPath: m_Name
+      value: snow-shot-effect
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 810609c2f2279435d9057c4db8a8bf76, type: 3}
+--- !u!198 &600390791 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3182876520522764358, guid: 810609c2f2279435d9057c4db8a8bf76,
+    type: 3}
+  m_PrefabInstance: {fileID: 600390790}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &603734774 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8002525321374692438, guid: 003c17822f5fe4d19b271b8b29e5c20a,
@@ -1753,6 +1832,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &720940343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720940340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2ea955926b5456584a70849a1e55bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!1001 &732336690
 PrefabInstance:
   m_ObjectHideFlags: 0
