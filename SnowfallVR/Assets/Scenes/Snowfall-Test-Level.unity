@@ -3010,6 +3010,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9547940, guid: ccc6d19d1b0bf7546b81e45ac5fa07ea, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccc6d19d1b0bf7546b81e45ac5fa07ea, type: 3}
 --- !u!1 &1259135039 stripped
@@ -3031,6 +3035,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  lookRadius: 10
 --- !u!195 &1259135041
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -5348,7 +5353,7 @@ PrefabInstance:
     - target: {fileID: 5759331188222144958, guid: 1ea8eda7de91a4dc3a55cdc9371dab70,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.533
+      value: 34.33
       objectReference: {fileID: 0}
     - target: {fileID: 5759331188222144958, guid: 1ea8eda7de91a4dc3a55cdc9371dab70,
         type: 3}
@@ -5358,7 +5363,7 @@ PrefabInstance:
     - target: {fileID: 5759331188222144958, guid: 1ea8eda7de91a4dc3a55cdc9371dab70,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.323
+      value: -13.1
       objectReference: {fileID: 0}
     - target: {fileID: 5759331188222144958, guid: 1ea8eda7de91a4dc3a55cdc9371dab70,
         type: 3}

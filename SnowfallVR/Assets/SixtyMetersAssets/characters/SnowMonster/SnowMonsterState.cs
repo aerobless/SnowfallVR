@@ -2,7 +2,7 @@ namespace SixtyMetersAssets.characters.SnowMonster
 {
     public enum SnowMonsterState
     {
-        Alive,
+        Idle,
         Dead
     }
 }

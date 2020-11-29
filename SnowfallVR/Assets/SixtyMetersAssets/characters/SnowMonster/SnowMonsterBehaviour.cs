@@ -8,20 +8,21 @@ using UnityEngine.AI;
 public class SnowMonsterBehaviour : MonoBehaviour, GunTarget
 {
     public int health = 100;
+    public float lookRadius = 10f;
 
     private Animator _animator;
-    private int dieHash = Animator.StringToHash("Die");
-    private int takeDamageHash = Animator.StringToHash("Take Damage");
-    
+    private readonly int _dieHash = Animator.StringToHash("Die");
+    private readonly int _takeDamageHash = Animator.StringToHash("Take Damage");
+    private readonly int _runForwardInPlaceHash = Animator.StringToHash("Run Forward");
+
     //AI
     private Transform _playerTransform;
     private NavMeshAgent _monsterNavMesh;
     private float _checkRate = 0.01f;
     private float _nextCheck;
-    
 
-    private SnowMonsterState _state = SnowMonsterState.Alive;
-    
+    private SnowMonsterState _state = SnowMonsterState.Idle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,26 +47,39 @@ public class SnowMonsterBehaviour : MonoBehaviour, GunTarget
 
     private void FollowPlayer()
     {
-        //Todo: Add distance check etc.
-        _monsterNavMesh.transform.LookAt(_playerTransform);
-        _monsterNavMesh.destination = _playerTransform.position;
+        float distanceToPlayer = Vector3.Distance(_playerTransform.position, transform.position);
+        if (distanceToPlayer <= lookRadius)
+        {
+            _monsterNavMesh.transform.LookAt(_playerTransform);
+            _monsterNavMesh.SetDestination(_playerTransform.position);
+            _animator.SetTrigger(_runForwardInPlaceHash);
+            
+            if (distanceToPlayer <= _monsterNavMesh.stoppingDistance)
+            {
+                _monsterNavMesh.transform.LookAt(_playerTransform);
+                _animator.ResetTrigger(_runForwardInPlaceHash);
+            }
+        }
+        else
+        {
+            _animator.ResetTrigger(_runForwardInPlaceHash);
+        }
     }
 
     public void TakeDamage(int damage)
     {
         health -= damage;
-        _animator.SetTrigger(takeDamageHash);
-        if (health <= 0 && _state == SnowMonsterState.Alive)
+        _animator.SetTrigger(_takeDamageHash);
+        if (health <= 0 && _state != SnowMonsterState.Dead)
         {
             Die();
         }
-        
     }
 
     private void Die()
     {
         _state = SnowMonsterState.Dead;
-        _animator.SetTrigger(dieHash);
+        _animator.SetTrigger(_dieHash);
         Destroy(gameObject, 5);
     }
 }
