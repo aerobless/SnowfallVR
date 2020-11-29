@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using SixtyMetersAssets.Items;
 using UnityEngine;
 
 public class SnowballGun : MonoBehaviour
@@ -36,7 +37,7 @@ public class SnowballGun : MonoBehaviour
         if (Physics.Raycast(gun.transform.position, gun.transform.forward, out hit, range))
         {
             Debug.Log(hit.transform.name); //TODO: remove, logs the name of the hit object
-            SnowballGunTarget target = hit.transform.GetComponent<SnowballGunTarget>();
+            GunTarget target = hit.transform.GetComponent<GunTarget>();
             if (target != null)
             {
                 target.TakeDamage(damagePerHit);
