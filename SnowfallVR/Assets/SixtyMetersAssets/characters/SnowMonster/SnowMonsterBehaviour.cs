@@ -38,11 +38,16 @@ public class SnowMonsterBehaviour : MonoBehaviour, GunTarget
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > _nextCheck)
+        if (Time.time > _nextCheck && MonsterIsAlive())
         {
             _nextCheck = Time.time + _checkRate;
             FollowPlayer();
         }
+    }
+
+    private bool MonsterIsAlive()
+    {
+        return _state != SnowMonsterState.Dead;
     }
 
     private void FollowPlayer()
@@ -70,7 +75,7 @@ public class SnowMonsterBehaviour : MonoBehaviour, GunTarget
     {
         health -= damage;
         _animator.SetTrigger(_takeDamageHash);
-        if (health <= 0 && _state != SnowMonsterState.Dead)
+        if (health <= 0 && MonsterIsAlive())
         {
             Die();
         }
