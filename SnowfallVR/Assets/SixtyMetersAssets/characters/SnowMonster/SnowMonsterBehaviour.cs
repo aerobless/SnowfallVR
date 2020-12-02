@@ -44,6 +44,15 @@ public class SnowMonsterBehaviour : MonoBehaviour, GunTarget
             FollowPlayer();
         }
     }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        Snowball snowball = other.gameObject.GetComponent<Snowball>();
+        if (snowball != null)
+        {
+            TakeDamage(snowball.damage);
+        }
+    }
 
     private bool MonsterIsAlive()
     {
