@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using SixtyMetersAssets.characters.SnowMonster;
+﻿using SixtyMetersAssets.characters.SnowMonster;
 using SixtyMetersAssets.Items;
 using UnityEngine;
 using UnityEngine.AI;
@@ -19,7 +17,9 @@ public class SnowMonsterBehaviour : MonoBehaviour, GunTarget
     private Transform _playerTransform;
     private NavMeshAgent _monsterNavMesh;
     private float _checkRate = 0.01f;
+    
     private float _nextCheck;
+    private float _stopTakingDamage;
 
     private SnowMonsterState _state = SnowMonsterState.Idle;
 
@@ -38,9 +38,18 @@ public class SnowMonsterBehaviour : MonoBehaviour, GunTarget
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > _nextCheck && MonsterIsAlive())
+        if (Time.time > _nextCheck && MonsterIsAlive() && MonsterIsNotTakingDamage())
         {
             _nextCheck = Time.time + _checkRate;
+            FollowPlayer();
+        }
+
+        if (Time.time > _stopTakingDamage && MonsterIsAlive())
+        {
+            //TODO: make more formal state machine.. this will probably get confusing fast
+            //Expires state after 2seconds if no further damage is taken
+            _state = SnowMonsterState.Idle;
+            _animator.ResetTrigger(_takeDamageHash);
             FollowPlayer();
         }
     }
@@ -57,6 +66,11 @@ public class SnowMonsterBehaviour : MonoBehaviour, GunTarget
     private bool MonsterIsAlive()
     {
         return _state != SnowMonsterState.Dead;
+    }
+    
+    private bool MonsterIsNotTakingDamage()
+    {
+        return _state != SnowMonsterState.TakingDamage;
     }
 
     private void FollowPlayer()
@@ -82,8 +96,12 @@ public class SnowMonsterBehaviour : MonoBehaviour, GunTarget
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
+        _state = SnowMonsterState.TakingDamage;
+        _monsterNavMesh.SetDestination(gameObject.transform.position); //Set current position as destination to stop moving
+        _animator.ResetTrigger(_runForwardInPlaceHash);
         _animator.SetTrigger(_takeDamageHash);
+        _stopTakingDamage = Time.time + 1f; //Expires after 2seconds if no further damage is taken
+        health -= damage;
         if (health <= 0 && MonsterIsAlive())
         {
             Die();
@@ -96,4 +114,5 @@ public class SnowMonsterBehaviour : MonoBehaviour, GunTarget
         _animator.SetTrigger(_dieHash);
         Destroy(gameObject, 5);
     }
+    
 }
