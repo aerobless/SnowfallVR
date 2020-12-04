@@ -119,7 +119,7 @@ public class SnowMonsterBehaviour : MonoBehaviour, GunTarget
     private Vector3 GetPlayerDestinationBendSafe()
     {
         Vector3 destination = _playerTransform.position;
-        destination.y = 0f; //Fixes bending backwards issue with smaller enemies
+        destination.y = 1f; //Fixes bending backwards issue with smaller enemies
         return destination;
     }
 

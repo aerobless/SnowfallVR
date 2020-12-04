@@ -984,6 +984,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stand_A
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 461ca3ef1be8b0548bc10c71bad280ef, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 461ca3ef1be8b0548bc10c71bad280ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.87
@@ -2760,11 +2764,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1259135039}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4fb96bd3527145ad92a307c37788d68, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b16d6a2383948e080432ccd9f5a0313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  lookRadius: 10
+  detectPlayerRadius: 10
 --- !u!195 &1259135041
 NavMeshAgent:
   m_ObjectHideFlags: 0
