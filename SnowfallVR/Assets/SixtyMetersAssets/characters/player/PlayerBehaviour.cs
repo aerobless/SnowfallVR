@@ -1,28 +1,54 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using SixtyMetersAssets.Items;
+﻿using SixtyMetersAssets.Items;
 using UnityEngine;
 
-public class PlayerBehaviour : MonoBehaviour, GunTarget
+namespace SixtyMetersAssets.characters.player
 {
-    public int health = 100;
-
-    // Start is called before the first frame update
-    void Start()
+    public class PlayerBehaviour : MonoBehaviour, GunTarget
     {
-    }
+        public int health = 100;
+        public GameObject spawnPoint;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (health <= 0)
+        // Start is called before the first frame update
+        void Start()
+        {
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            if (health <= 0)
+            {
+                Die();
+            }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            Snowball snowball = other.gameObject.GetComponent<Snowball>();
+            if (snowball != null)
+            {
+                TakeDamage(snowball.damage);
+            }
+        }
+
+        public void TakeDamage(int damage)
+        {
+            health -= damage;
+            Debug.Log("Player takes damage.. health: " + health);
+        }
+
+        private void Die()
         {
             Debug.Log("the player has died");
+            RespawnPlayerWithFullHealth();
         }
-    }
 
-    public void TakeDamage(int damage)
-    {
-        health -= damage;
+        private void RespawnPlayerWithFullHealth()
+        {
+            health = 100;
+            enabled = false;
+            transform.position = spawnPoint.transform.position;
+            enabled = true;
+        }
     }
 }

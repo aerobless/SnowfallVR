@@ -1825,6 +1825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  spawnPoint: {fileID: 2096579893}
 --- !u!20 &829279961 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 5759331188222716712, guid: 1ea8eda7de91a4dc3a55cdc9371dab70,
