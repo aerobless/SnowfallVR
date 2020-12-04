@@ -13,3 +13,9 @@ One or more textures on this 3D model have been created with photographs from Te
 + File: snowball-shot.wav Source: https://freesound.org/people/qubodup/sounds/60013/ License: CC0
 
 + File: fireplace.wav Source: https://freesound.org/people/leosalom/sounds/234288/ License: CC3.0
+
++ File: snow_impact_1.wav Source: https://freesound.org/people/Julien%20Matthey/sounds/167076/ License: CC0
+
++ File: snow_impact_2.wav Source: https://freesound.org/people/Julien%20Matthey/sounds/167081/ License: CC0
+
++ File: snow_impact_3.wav Source: https://freesound.org/people/Julien%20Matthey/sounds/167080/ License: CC0
