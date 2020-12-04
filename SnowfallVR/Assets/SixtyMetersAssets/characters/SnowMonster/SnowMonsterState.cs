@@ -5,5 +5,6 @@ namespace SixtyMetersAssets.characters.SnowMonster
         Idle,
         Dead,
         TakingDamage,
+        Attacking,
     }
 }
