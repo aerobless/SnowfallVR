@@ -6052,6 +6052,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90.00001
       objectReference: {fileID: 0}
+    - target: {fileID: 2184081254875051866, guid: bc35979009ff4456b8d39991607f7d4e,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2184081255225838843, guid: bc35979009ff4456b8d39991607f7d4e,
         type: 3}
       propertyPath: projectile
