@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using SixtyMetersAssets.Items.Snowball;
 using UnityEngine;
 
 public class SnowballGun : MonoBehaviour

@@ -1,18 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Snowball : MonoBehaviour
+namespace SixtyMetersAssets.Items.Snowball
 {
-
-    public int damage = 10;
-    public GameObject impactEffect;
-    public GameObject instance;
-
-    private void OnTriggerEnter(Collider other)
+    public class Snowball : MonoBehaviour
     {
-        GameObject instantiatedImpact = Instantiate(impactEffect, transform.position, Quaternion.LookRotation(transform.position.normalized));
-        Destroy(instantiatedImpact, 2f);
-        Destroy(instance);   
+
+        public int damage = 10;
+        public GameObject impactEffect;
+        public GameObject instance;
+
+        private void OnTriggerEnter(Collider other)
+        {
+            GameObject instantiatedImpact = Instantiate(impactEffect, transform.position, Quaternion.LookRotation(transform.position.normalized));
+            Destroy(instantiatedImpact, 2f);
+            Destroy(instance);   
+        }
     }
 }

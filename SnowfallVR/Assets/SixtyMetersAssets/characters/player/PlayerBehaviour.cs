@@ -1,7 +1,8 @@
 ﻿using SixtyMetersAssets.Items;
+using SixtyMetersAssets.Items.Snowball;
 using UnityEngine;
 
-namespace SixtyMetersAssets.characters.player
+namespace SixtyMetersAssets.Characters.Player
 {
     public class PlayerBehaviour : MonoBehaviour, GunTarget
     {

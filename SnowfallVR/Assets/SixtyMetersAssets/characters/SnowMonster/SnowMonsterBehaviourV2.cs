@@ -1,10 +1,10 @@
-﻿using SixtyMetersAssets.characters.player;
+﻿using SixtyMetersAssets.Characters.Player;
 using SixtyMetersAssets.Items;
+using SixtyMetersAssets.Items.Snowball;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Serialization;
 
-namespace SixtyMetersAssets.characters.SnowMonster
+namespace SixtyMetersAssets.Characters.SnowMonster
 {
     public class SnowMonsterBehaviourV2 : MonoBehaviour, GunTarget
     {

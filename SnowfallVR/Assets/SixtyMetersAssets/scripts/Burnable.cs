@@ -1,36 +1,38 @@
 ﻿using System;
-using System.Collections;
 using UnityEngine;
 
-public class Burnable : MonoBehaviour
+namespace SixtyMetersAssets.Scripts
 {
-    public Boolean isBurning;
-    public Boolean burnsForever;
-
-    // Start is called before the first frame update
-    void Start()
+    public class Burnable : MonoBehaviour
     {
-        if (!isBurning)
+        public Boolean isBurning;
+        public Boolean burnsForever;
+
+        // Start is called before the first frame update
+        void Start()
         {
-            GetComponent<ParticleSystem>().Stop();
+            if (!isBurning)
+            {
+                GetComponent<ParticleSystem>().Stop();
+            }
         }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        Burnable burnableGameObject = other.gameObject.GetComponent<Burnable>();
-        if (burnableGameObject != null && burnableGameObject.isBurning && burnsForever == false)
+        // Update is called once per frame
+        void Update()
         {
-            print("Object has been triggered to start burning");
-            isBurning = true;
-            GetComponent<ParticleSystem>().Play();
-            GetComponent<AudioSource>().Play();
-            Destroy(gameObject, 10);
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            Burnable burnableGameObject = other.gameObject.GetComponent<Burnable>();
+            if (burnableGameObject != null && burnableGameObject.isBurning && burnsForever == false)
+            {
+                print("Object has been triggered to start burning");
+                isBurning = true;
+                GetComponent<ParticleSystem>().Play();
+                GetComponent<AudioSource>().Play();
+                Destroy(gameObject, 10);
+            }
         }
     }
 }

@@ -27,3 +27,5 @@ One or more textures on this 3D model have been created with photographs from Te
 + File: MonsterBreathing.wav Source: https://freesound.org/people/nemaavla/sounds/508020/ License: CC0
 
 + File: MonsterMeleeAttack.wav Source: https://freesound.org/people/unfa/sounds/221540/ License: CC0
+
++ File: ChurchBellSound.wav Source: https://freesound.org/people/Ihaksi/sounds/411420/ License: CC0

@@ -1,4 +1,4 @@
-namespace SixtyMetersAssets.characters.SnowMonster
+namespace SixtyMetersAssets.Characters.SnowMonster
 {
     public enum SnowMonsterState
     {

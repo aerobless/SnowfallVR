@@ -5537,7 +5537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  detectPlayerRadius: 20
+  detectPlayerRadius: 40
   painSound: {fileID: 8300000, guid: 3821a4dcbeae844fb8f1ce5fbe8c4504, type: 3}
   deathSound: {fileID: 8300000, guid: 72699198ea41a4fecb1e684bbcc7c324, type: 3}
   meleeAttackSound: {fileID: 8300000, guid: 1f3910ed53154485fa20eb127c79aed9, type: 3}
