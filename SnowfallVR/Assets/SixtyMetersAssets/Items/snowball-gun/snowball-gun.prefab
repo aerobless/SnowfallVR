@@ -35,7 +35,6 @@ Transform:
   - {fileID: 65944214985487472}
   - {fileID: 7889788984691251645}
   - {fileID: 2184081254875051869}
-  - {fileID: 2873763457096853433}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -31.787, z: -90.00001}
@@ -83,8 +82,9 @@ MonoBehaviour:
   gun: {fileID: 2184081255225838842}
   audioSource: {fileID: 2184081254875051866}
   shotSound: {fileID: 8300000, guid: d0d5f784e26e340b98236eae43bbc365, type: 3}
-  muzzleFlash: {fileID: 3631224014887725961}
+  muzzleFlash: {fileID: 0}
   projectile: {fileID: 0}
+  projectileSpawnPoint: {fileID: 0}
 --- !u!114 &2184081255225838842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -466,99 +466,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1001 &2184081254699301839
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1857122594624252690}
-    m_Modifications:
-    - target: {fileID: 4156473873265679478, guid: 810609c2f2279435d9057c4db8a8bf76,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4156473873265679478, guid: 810609c2f2279435d9057c4db8a8bf76,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4156473873265679478, guid: 810609c2f2279435d9057c4db8a8bf76,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4156473873265679478, guid: 810609c2f2279435d9057c4db8a8bf76,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4156473873265679478, guid: 810609c2f2279435d9057c4db8a8bf76,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4156473873265679478, guid: 810609c2f2279435d9057c4db8a8bf76,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4156473873265679478, guid: 810609c2f2279435d9057c4db8a8bf76,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4156473873265679478, guid: 810609c2f2279435d9057c4db8a8bf76,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4156473873265679478, guid: 810609c2f2279435d9057c4db8a8bf76,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 4156473873265679478, guid: 810609c2f2279435d9057c4db8a8bf76,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4156473873265679478, guid: 810609c2f2279435d9057c4db8a8bf76,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4156473873265679478, guid: 810609c2f2279435d9057c4db8a8bf76,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4156473873265679478, guid: 810609c2f2279435d9057c4db8a8bf76,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4156473873265679478, guid: 810609c2f2279435d9057c4db8a8bf76,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5610353112655110877, guid: 810609c2f2279435d9057c4db8a8bf76,
-        type: 3}
-      propertyPath: m_Name
-      value: snow-shot-effect
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 810609c2f2279435d9057c4db8a8bf76, type: 3}
---- !u!4 &2873763457096853433 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4156473873265679478, guid: 810609c2f2279435d9057c4db8a8bf76,
-    type: 3}
-  m_PrefabInstance: {fileID: 2184081254699301839}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &3631224014887725961 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3182876520522764358, guid: 810609c2f2279435d9057c4db8a8bf76,
-    type: 3}
-  m_PrefabInstance: {fileID: 2184081254699301839}
-  m_PrefabAsset: {fileID: 0}

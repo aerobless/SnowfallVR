@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class SnowballGun : MonoBehaviour
 {
@@ -24,7 +25,12 @@ public class SnowballGun : MonoBehaviour
     private void Shoot()
     {
         audioSource.PlayOneShot(shotSound, 1f);
-        muzzleFlash.Play();
+        //muzzleFlash.Play();
+        ParticleSystem instantiatedMuzzleFlash = Instantiate(muzzleFlash, projectileSpawnPoint.transform.position, transform.rotation);
+        instantiatedMuzzleFlash.Play();
+        Destroy(instantiatedMuzzleFlash, 1f);
+        OVRInput.SetControllerVibration(0.5f, 0.5f, OVRInput.Controller.RTouch);
+        StartCoroutine(EndVibration(0.05f));
         
         GameObject instantiatedProjectile = Instantiate(projectile, projectileSpawnPoint.transform.position , transform.rotation);
         instantiatedProjectile.GetComponent<Rigidbody>().velocity = gun.transform.forward.normalized * projectileSpeed;
@@ -32,5 +38,12 @@ public class SnowballGun : MonoBehaviour
         instantiatedProjectile.GetComponent<Snowball>().instance = instantiatedProjectile;
         
         Destroy(instantiatedProjectile, 3f); // Destroy the projectile after max 3seconds even if it doesn't make contact
+    }
+
+    private static IEnumerator EndVibration(float time)
+    {
+        yield return new WaitForSeconds(time);
+        // Code to execute after the delay
+        OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.RTouch);
     }
 }

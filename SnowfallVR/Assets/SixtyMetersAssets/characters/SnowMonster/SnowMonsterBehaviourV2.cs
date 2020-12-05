@@ -125,8 +125,6 @@ namespace SixtyMetersAssets.characters.SnowMonster
             _monsterNavMesh.transform.LookAt(_playerTransform);
             _monsterNavMesh.SetDestination(_playerTransform.position);
 
-            Debug.Log("Moving to player");
-
             //Detect state transitions
             if (!PlayerIsInRange())
             {
