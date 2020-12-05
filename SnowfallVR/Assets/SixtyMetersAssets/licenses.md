@@ -19,3 +19,5 @@ One or more textures on this 3D model have been created with photographs from Te
 + File: snow_impact_2.wav Source: https://freesound.org/people/Julien%20Matthey/sounds/167081/ License: CC0
 
 + File: snow_impact_3.wav Source: https://freesound.org/people/Julien%20Matthey/sounds/167080/ License: CC0
+
++ File: MonsterPain.wav Source: https://freesound.org/people/Michel88/sounds/76966/ License: CC Sampling Plus 1.0

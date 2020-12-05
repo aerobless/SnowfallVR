@@ -10,12 +10,15 @@ namespace SixtyMetersAssets.characters.SnowMonster
     {
         public int health = 100;
         public float detectPlayerRadius = 10f;
+        public AudioClip painSound;
 
         private Animator _animator;
         private readonly int _dieHash = Animator.StringToHash("Die");
         private readonly int _takeDamageHash = Animator.StringToHash("Take Damage");
         private readonly int _runForwardInPlaceHash = Animator.StringToHash("Run Forward");
         private readonly int _slapAttackRight = Animator.StringToHash("Slap Attack Right");
+
+        private AudioSource _audioSource;
 
         // AI
         private Transform _playerTransform;
@@ -31,6 +34,7 @@ namespace SixtyMetersAssets.characters.SnowMonster
         void Start()
         {
             _animator = GetComponent<Animator>();
+            _audioSource = GetComponent<AudioSource>();
             if (GameObject.FindGameObjectWithTag("Player").activeInHierarchy)
             {
                 _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
@@ -150,8 +154,8 @@ namespace SixtyMetersAssets.characters.SnowMonster
         private void ExecuteTakingDamageState()
         {
             _monsterNavMesh.SetDestination(gameObject.transform.position); //Stop moving
-            _animator.ResetTrigger(_runForwardInPlaceHash);
             _animator.SetTrigger(_takeDamageHash);
+            _audioSource.PlayOneShot(painSound);
             _nextState = SnowMonsterState.Idle;
 
             NextCheckInSeconds(1f);
