@@ -11,6 +11,7 @@ namespace SixtyMetersAssets.characters.SnowMonster
         public int health = 100;
         public float detectPlayerRadius = 10f;
         public AudioClip painSound;
+        public AudioClip deathSound;
 
         private Animator _animator;
         private readonly int _dieHash = Animator.StringToHash("Die");
@@ -210,6 +211,7 @@ namespace SixtyMetersAssets.characters.SnowMonster
         private void Die()
         {
             _animator.SetTrigger(_dieHash);
+            _audioSource.PlayOneShot(deathSound);
             Destroy(gameObject, 5);
         }
 
