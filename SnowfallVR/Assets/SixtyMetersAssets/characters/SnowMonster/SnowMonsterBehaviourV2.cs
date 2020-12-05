@@ -10,8 +10,11 @@ namespace SixtyMetersAssets.characters.SnowMonster
     {
         public int health = 100;
         public float detectPlayerRadius = 10f;
+        
+        // Sounds
         public AudioClip painSound;
         public AudioClip deathSound;
+        public AudioClip meleeAttackSound;
 
         private Animator _animator;
         private readonly int _dieHash = Animator.StringToHash("Die");
@@ -143,6 +146,7 @@ namespace SixtyMetersAssets.characters.SnowMonster
             _monsterNavMesh.transform.LookAt(_playerTransform);
             _animator.SetTrigger(_slapAttackRight);
             _player.TakeDamage(10);
+            _audioSource.PlayOneShot(meleeAttackSound);
 
             if (!PlayerIsCloseEnoughToAttack())
             {
