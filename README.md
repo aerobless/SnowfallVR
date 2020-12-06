@@ -7,7 +7,7 @@ A game about throwing snowballs at waves of monsters in VR. The game is made to 
 ## Installation
 
 1. Download the latest apk artifact from https://github.com/aerobless/SnowfallVR/tree/master/artifacts
-2. Use [SideQuest](https://sidequestvr.com/), ADB or a similar tool to install the apk on your headset
+2. Use [SideQuest](https://sidequestvr.com/) (recommended), ADB or a similar tool to install the apk on your headset
 
 
 ## Development stack
