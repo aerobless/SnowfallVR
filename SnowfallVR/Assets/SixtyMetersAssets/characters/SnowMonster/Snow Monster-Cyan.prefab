@@ -5354,6 +5354,9 @@ GameObject:
   - component: {fileID: 3352635468103338990}
   - component: {fileID: 3352635468103338987}
   - component: {fileID: 3352635468103338986}
+  - component: {fileID: 6257293141261681219}
+  - component: {fileID: 3996402054332154905}
+  - component: {fileID: 8708203121149715419}
   m_Layer: 0
   m_Name: Snow Monster-Cyan
   m_TagString: Untagged
@@ -5563,6 +5566,106 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &6257293141261681219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3352635468103382719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 3996402054332154905}
+  - {fileID: 8708203121149715419}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &3996402054332154905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3352635468103382719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 0
+--- !u!114 &8708203121149715419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3352635468103382719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 2
+    Name: Walk Forward
+  - Type: 4
+    SynchronizeType: 2
+    Name: Walk Backward
+  - Type: 4
+    SynchronizeType: 2
+    Name: Strafe Right
+  - Type: 4
+    SynchronizeType: 2
+    Name: Strafe Left
+  - Type: 4
+    SynchronizeType: 2
+    Name: Run Forward
+  - Type: 4
+    SynchronizeType: 2
+    Name: Run Backward
+  - Type: 9
+    SynchronizeType: 2
+    Name: Jump
+  - Type: 9
+    SynchronizeType: 2
+    Name: Slap Attack Right
+  - Type: 9
+    SynchronizeType: 2
+    Name: Slap Attack Left
+  - Type: 9
+    SynchronizeType: 2
+    Name: Clap Attack
+  - Type: 9
+    SynchronizeType: 2
+    Name: Cast Spell
+  - Type: 4
+    SynchronizeType: 2
+    Name: Defend
+  - Type: 9
+    SynchronizeType: 2
+    Name: Take Damage
+  - Type: 9
+    SynchronizeType: 2
+    Name: Die
+  m_SynchronizeLayers:
+  - SynchronizeType: 2
+    LayerIndex: 0
 --- !u!1 &3352635468103382761
 GameObject:
   m_ObjectHideFlags: 0

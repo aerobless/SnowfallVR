@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Photon.Pun;
 using SixtyMetersAssets.Items.Snowball;
 using UnityEngine;
 
@@ -33,7 +34,7 @@ public class SnowballGun : MonoBehaviour
         OVRInput.SetControllerVibration(0.5f, 0.5f, OVRInput.Controller.RTouch);
         StartCoroutine(EndVibration(0.05f));
         
-        GameObject instantiatedProjectile = Instantiate(projectile, projectileSpawnPoint.transform.position , transform.rotation);
+        GameObject instantiatedProjectile = PhotonNetwork.Instantiate("items/Snowball", projectileSpawnPoint.transform.position , transform.rotation);
         instantiatedProjectile.GetComponent<Rigidbody>().velocity = gun.transform.forward.normalized * projectileSpeed;
 
         instantiatedProjectile.GetComponent<Snowball>().instance = instantiatedProjectile;

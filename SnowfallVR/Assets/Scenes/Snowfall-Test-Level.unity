@@ -3703,6 +3703,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1378234002}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1380014616 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1337010011663921576, guid: bc35979009ff4456b8d39991607f7d4e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2184081255207389001}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1380014617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380014616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 0
+--- !u!114 &1380014618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380014616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 1
+  ObservedComponents:
+  - {fileID: 1380014617}
+  viewIdField: 1
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1001 &1394050835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6795,6 +6840,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Snow Monster-Cyan
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257293141261681219, guid: 86981a85e9b3d4aed9b611ebc9d8a320,
+        type: 3}
+      propertyPath: viewIdField
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86981a85e9b3d4aed9b611ebc9d8a320, type: 3}

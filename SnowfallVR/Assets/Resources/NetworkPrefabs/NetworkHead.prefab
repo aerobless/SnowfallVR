@@ -149,3 +149,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentPathVr: VR/OVRPlayerController/OVRCameraRig/TrackingSpace/CenterEyeAnchor
   alternativePath: OtherCharacters
+  localRotationZ: 0
