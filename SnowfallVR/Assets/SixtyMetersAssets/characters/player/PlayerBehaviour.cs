@@ -1,4 +1,5 @@
-﻿using SixtyMetersAssets.Items;
+﻿using Photon.Pun;
+using SixtyMetersAssets.Items;
 using SixtyMetersAssets.Items.Snowball;
 using UnityEngine;
 
@@ -8,11 +9,13 @@ namespace SixtyMetersAssets.Characters.Player
     {
         public int health = 100;
         private LocalPlayer _localPlayer;
+        private PhotonView _photonView;
 
         // Start is called before the first frame update
         void Start()
         {
             _localPlayer = GameObject.Find("OVRPlayerController").GetComponent<LocalPlayer>();
+            _photonView = GetComponent<PhotonView>();
         }
 
         // Update is called once per frame
@@ -27,7 +30,7 @@ namespace SixtyMetersAssets.Characters.Player
         private void OnTriggerEnter(Collider other)
         {
             Snowball snowball = other.gameObject.GetComponent<Snowball>();
-            if (snowball != null)
+            if (snowball != null && _photonView.IsMine)
             {
                 TakeDamage(snowball.damage);
             }
@@ -35,10 +38,13 @@ namespace SixtyMetersAssets.Characters.Player
 
         public void TakeDamage(int damage)
         {
-            health -= damage;
-            Debug.Log("Player takes damage.. health: " + health);
+            if (_photonView.IsMine)
+            {
+                health -= damage;
+                Debug.Log("Player takes damage.. health: " + health);
+            }
         }
-        
+
         private void Die()
         {
             Debug.Log("the player has died");
