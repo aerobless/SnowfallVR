@@ -842,7 +842,7 @@ RectTransform:
   m_LocalScale: {x: 0.0033450718, y: 0.0033450718, z: 0.0033450716}
   m_Children: []
   m_Father: {fileID: 889560911}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5690,6 +5690,36 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5759331188222094554, guid: 1ea8eda7de91a4dc3a55cdc9371dab70,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5759331188222094554, guid: 1ea8eda7de91a4dc3a55cdc9371dab70,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5759331188222094554, guid: 1ea8eda7de91a4dc3a55cdc9371dab70,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5759331188222098612, guid: 1ea8eda7de91a4dc3a55cdc9371dab70,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5759331188222098612, guid: 1ea8eda7de91a4dc3a55cdc9371dab70,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5759331188222098612, guid: 1ea8eda7de91a4dc3a55cdc9371dab70,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
     - target: {fileID: 5759331188222144958, guid: 1ea8eda7de91a4dc3a55cdc9371dab70,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6361,7 +6391,7 @@ RectTransform:
   m_LocalScale: {x: 0.0005551117, y: 0.0005551117, z: 0.0005551116}
   m_Children: []
   m_Father: {fileID: 889560911}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90.00001, y: 0, z: 35.324}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

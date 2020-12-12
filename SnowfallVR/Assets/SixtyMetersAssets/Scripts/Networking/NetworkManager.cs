@@ -101,8 +101,9 @@ namespace SixtyMetersAssets.Scripts.Networking
 
         private void CreatePlayer()
         {
-            PhotonNetwork.Instantiate(Path.Combine("NetworkPrefabs", "NetworkHead"), _localPlayerTransform.position,
-                Quaternion.identity, 0);
+            PhotonNetwork.Instantiate(Path.Combine("NetworkPrefabs", "NetworkHead"), Vector3.zero, Quaternion.identity, 0);
+            PhotonNetwork.Instantiate(Path.Combine("NetworkPrefabs", "NetworkHandRight"),Vector3.zero, Quaternion.identity, 0);
+            PhotonNetwork.Instantiate(Path.Combine("NetworkPrefabs", "NetworkHandLeft"), Vector3.zero, Quaternion.identity, 0);
         }
 
         // Update is called once per frame

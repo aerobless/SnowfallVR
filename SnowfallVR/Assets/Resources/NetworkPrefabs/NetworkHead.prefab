@@ -111,7 +111,7 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  observableSearch: 0
+  observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
@@ -147,5 +147,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e882056e496a9488297982313ad3a116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentPath_vr: VR/OVRPlayerController/OVRCameraRig/TrackingSpace/CenterEyeAnchor
+  parentPathVr: VR/OVRPlayerController/OVRCameraRig/TrackingSpace/CenterEyeAnchor
   alternativePath: OtherCharacters
