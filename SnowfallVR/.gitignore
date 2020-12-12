@@ -63,3 +63,4 @@ crashlytics-build.properties
 
 # Third Party Assets
 /Assets/ThirdPartyAssets
+/Assets/Photon/
