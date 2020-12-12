@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Photon.Pun;
+using UnityEngine;
 
 namespace SixtyMetersAssets.Characters.SnowMonster
 {
@@ -26,7 +27,7 @@ namespace SixtyMetersAssets.Characters.SnowMonster
 
         public void Spawn()
         {
-            Instantiate(monsterToSpawn, transform.position, transform.rotation);
+            PhotonNetwork.Instantiate("Characters/"+monsterToSpawn.name, transform.position, transform.rotation);
         }
     }
 }

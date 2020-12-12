@@ -10,7 +10,7 @@ namespace SixtyMetersAssets.Characters.SnowMonster
     {
         public int health = 100;
         public float detectPlayerRadius = 10f;
-        
+
         // Sounds
         public AudioClip painSound;
         public AudioClip deathSound;
@@ -24,9 +24,10 @@ namespace SixtyMetersAssets.Characters.SnowMonster
 
         private AudioSource _audioSource;
 
+        private PlayerManager _playerManager;
+
         // AI
-        private Transform _playerTransform;
-        private PlayerBehaviour _player;
+        private PlayerBehaviour _currentTarget;
         private NavMeshAgent _monsterNavMesh;
 
         // Statemachine
@@ -39,11 +40,9 @@ namespace SixtyMetersAssets.Characters.SnowMonster
         {
             _animator = GetComponent<Animator>();
             _audioSource = GetComponent<AudioSource>();
-            if (GameObject.FindGameObjectWithTag("Player").activeInHierarchy)
-            {
-                _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-                _player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBehaviour>();
-            }
+
+            _playerManager = FindObjectOfType<PlayerManager>();
+            _currentTarget = _playerManager.GetClosestPlayer(transform);
 
             _monsterNavMesh = gameObject.GetComponent<NavMeshAgent>();
             _nextCheck = Time.time;
@@ -52,6 +51,9 @@ namespace SixtyMetersAssets.Characters.SnowMonster
         // Update is called once per frame
         void Update()
         {
+            //TODO: maybe reduce checks if this is bad for performance
+            _currentTarget = _playerManager.GetClosestPlayer(transform);
+
             if (Time.time > _nextCheck)
             {
                 if (_currentState != _nextState)
@@ -122,9 +124,10 @@ namespace SixtyMetersAssets.Characters.SnowMonster
         private void ExecuteMovingToPlayerState()
         {
             _animator.SetTrigger(_runForwardInPlaceHash);
-            _monsterNavMesh.transform.LookAt(_playerTransform);
-            _monsterNavMesh.SetDestination(_playerTransform.position);
 
+            _monsterNavMesh.transform.LookAt(_currentTarget.transform);
+            _monsterNavMesh.SetDestination(_currentTarget.transform.position);
+            
             //Detect state transitions
             if (!PlayerIsInRange())
             {
@@ -141,9 +144,9 @@ namespace SixtyMetersAssets.Characters.SnowMonster
 
         private void ExecuteAttackingState()
         {
-            _monsterNavMesh.transform.LookAt(_playerTransform);
+            _monsterNavMesh.transform.LookAt(_currentTarget.transform);
             _animator.SetTrigger(_slapAttackRight);
-            _player.TakeDamage(10);
+            _currentTarget.TakeDamage(10);
             _audioSource.PlayOneShot(meleeAttackSound);
 
             if (!PlayerIsCloseEnoughToAttack())
@@ -171,13 +174,18 @@ namespace SixtyMetersAssets.Characters.SnowMonster
 
         private bool PlayerIsInRange()
         {
-            float distanceToPlayer = Vector3.Distance(_playerTransform.position, transform.position);
-            return distanceToPlayer <= detectPlayerRadius;
+            if (_currentTarget != null)
+            {
+                float distanceToPlayer = Vector3.Distance(_currentTarget.transform.position, transform.position);
+                return distanceToPlayer <= detectPlayerRadius;
+            }
+
+            return false;
         }
 
         private bool PlayerIsCloseEnoughToAttack()
         {
-            float distanceToPlayer = Vector3.Distance(_playerTransform.position, transform.position);
+            float distanceToPlayer = Vector3.Distance(_currentTarget.transform.position, transform.position);
             return distanceToPlayer <= _monsterNavMesh.stoppingDistance;
         }
 
@@ -196,13 +204,6 @@ namespace SixtyMetersAssets.Characters.SnowMonster
             InterruptActiveState();
 
             health -= damage;
-        }
-
-        private Vector3 GetPlayerDestinationBendSafe()
-        {
-            Vector3 destination = _playerTransform.position;
-            destination.y = 1f; //Fixes bending backwards issue with smaller enemies
-            return destination;
         }
 
         private void InterruptActiveState()

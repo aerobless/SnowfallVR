@@ -7,11 +7,12 @@ namespace SixtyMetersAssets.Characters.Player
     public class PlayerBehaviour : MonoBehaviour, GunTarget
     {
         public int health = 100;
-        public GameObject spawnPoint;
+        private LocalPlayer _localPlayer;
 
         // Start is called before the first frame update
         void Start()
         {
+            _localPlayer = GameObject.Find("OVRPlayerController").GetComponent<LocalPlayer>();
         }
 
         // Update is called once per frame
@@ -37,7 +38,7 @@ namespace SixtyMetersAssets.Characters.Player
             health -= damage;
             Debug.Log("Player takes damage.. health: " + health);
         }
-
+        
         private void Die()
         {
             Debug.Log("the player has died");
@@ -47,9 +48,7 @@ namespace SixtyMetersAssets.Characters.Player
         private void RespawnPlayerWithFullHealth()
         {
             health = 100;
-            enabled = false;
-            transform.position = spawnPoint.transform.position;
-            enabled = true;
+            _localPlayer.Respawn();
         }
     }
 }

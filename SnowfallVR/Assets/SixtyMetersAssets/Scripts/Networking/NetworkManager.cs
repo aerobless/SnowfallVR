@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using Photon.Pun;
-using Photon.Pun.Demo.Cockpit;
 using Photon.Realtime;
-using SixtyMetersAssets.Characters.Player;
 using UnityEngine;
 
 namespace SixtyMetersAssets.Scripts.Networking
@@ -13,7 +11,6 @@ namespace SixtyMetersAssets.Scripts.Networking
         private const string DefaultRoom = "SnowfallVR_Default";
 
         private string _selectedRoom;
-        private Transform _localPlayerTransform;
 
         private void Awake()
         {
@@ -23,11 +20,6 @@ namespace SixtyMetersAssets.Scripts.Networking
         // Start is called before the first frame update
         void Start()
         {
-            if (GameObject.FindGameObjectWithTag("Player").activeInHierarchy)
-            {
-                _localPlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-            }
-
             if (PhotonNetwork.IsConnected)
             {
                 OnConnectedToMaster();
