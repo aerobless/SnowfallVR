@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using Photon.Pun;
 using SixtyMetersAssets.Items.Snowball;
+using SixtyMetersAssets.Scripts;
 using UnityEngine;
 
-public class SnowballGun : MonoBehaviour
+public class SnowballGun : MonoBehaviour, IActionableItem
 {
     
     public OVRGrabbable gun;
@@ -18,10 +19,6 @@ public class SnowballGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger) || Input.GetButtonDown("Fire1"))
-        {
-            Shoot();
-        }
     }
 
     private void Shoot()
@@ -47,5 +44,10 @@ public class SnowballGun : MonoBehaviour
         yield return new WaitForSeconds(time);
         // Code to execute after the delay
         OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.RTouch);
+    }
+
+    public void TriggerAction()
+    {
+        Shoot();
     }
 }

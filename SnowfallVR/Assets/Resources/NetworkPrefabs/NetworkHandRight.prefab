@@ -1098,6 +1098,7 @@ GameObject:
   - component: {fileID: -1602860859663929636}
   - component: {fileID: 5965127436837805309}
   - component: {fileID: 4096346791604424553}
+  - component: {fileID: -5911379247873838788}
   m_Layer: 0
   m_Name: NetworkHandRight
   m_TagString: Untagged
@@ -1228,6 +1229,19 @@ MonoBehaviour:
   parentPathVr: VR/OVRPlayerController/OVRCameraRig/TrackingSpace/RightHandAnchor
   alternativePath: OtherCharacters
   localRotationZ: -90
+--- !u!114 &-5911379247873838788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3040241275101969394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f36798c0b1906429194d8e22def2cab7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handOrientation: 0
 --- !u!1 &3040241275101970682
 GameObject:
   m_ObjectHideFlags: 0

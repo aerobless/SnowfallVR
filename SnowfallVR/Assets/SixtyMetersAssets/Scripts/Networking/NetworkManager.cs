@@ -77,14 +77,14 @@ namespace SixtyMetersAssets.Scripts.Networking
             }
         }
 
-        public override void OnPlayerEnteredRoom(Player newPlayer)
+        public override void OnPlayerEnteredRoom(Photon.Realtime.Player newPlayer)
         {
             base.OnPlayerEnteredRoom(newPlayer);
             //OnPlayersChanged?.Invoke(); //TODO:
             Debug.Log("A new player enter the room with id" + newPlayer.UserId);
         }
         
-        public override void OnPlayerLeftRoom(Player otherPlayer)
+        public override void OnPlayerLeftRoom(Photon.Realtime.Player otherPlayer)
         {
             base.OnPlayerLeftRoom(otherPlayer);
             //OnPlayersChanged?.Invoke(); //TODO:
